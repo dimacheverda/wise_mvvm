@@ -1,0 +1,22 @@
+{% include 'header' %}
+
+import Foundation
+import Moya
+import RxSwift
+import RxCocoa
+import RxOptional
+import ObjectMapper
+import Moya_ObjectMapper
+import RealmSwift
+
+class {{ module_info.name }}ViewModel: BaseViewModel {
+    var items: Observable<[Any]> = Observable.empty()
+    var barTitle: Observable<String> = Observable.empty()
+    
+    override init() {
+        super.init()
+        
+        // Bar Title setting   
+        // barTitle = Observable.just(<#bar title#>)
+    }
+}

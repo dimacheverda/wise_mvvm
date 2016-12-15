@@ -1,0 +1,14 @@
+# Template information section
+name: “wise_mvvm"
+summary: "MVVM module template for Wise Engineering."
+author: "Dmytro Cheverda"
+version: "1.0"
+license: "MIT"
+
+# The declarations for code files
+code_files:
+- { name: ViewController.swift, path: Code/ViewController.swift.liquid }
+- { name: ViewController.xib, path: Code/ViewController.xib.liquid }
+- { name: ViewModel.swift, path: Code/ViewModel.swift.liquid }
+- { name: TableViewCell.swift, path: Code/TableViewCell.swift.liquid }
+- { name: TableViewCell.xib, path: Code/TableViewCell.xib.liquid }

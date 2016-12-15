@@ -1,0 +1,80 @@
+{% include 'header' %}
+
+import UIKit
+import RxSwift
+import RxCocoa
+import Realm
+import RealmSwift
+import Moya
+
+class {{ module_info.name }}ViewController: BaseViewController {
+	
+    @IBOutlet weak var tableView: UITableView!
+
+    private var viewModel: {{module_info.name}}ViewModel!
+
+    // MARK: - Life Cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupNavBar()
+        setupTableView()
+        setupRx()
+    }
+
+    // MARK: - Setup
+
+    private func setupNavBar() {
+        
+    }
+    
+    private func setupTableView() {
+        tableView.register({{ module_info.name }}TableViewCell.self)
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 44
+        tableView.tableFooterView = UIView()
+    }
+    
+    private func setupRx() {
+        viewModel = {{ module_info.name }}ViewModel()
+
+        // NavigationBar title binding
+        // viewModel
+        //     .barTitle
+        //     .bindTo(navigationItem.rx.title)
+        //     .addDisposableTo(disposeBag)
+        
+        // TableView data binding
+        // viewModel
+        //     .items
+        //     .bindTo(tableView
+        //         .rx
+        //         .items(cellIdentifier: {{ module_info.name }}TableViewCell.reuseIdentifier, cellType: {{ module_info.name }}TableViewCell.self)) { (row, element, cell) in
+        //             // TODO: set cell's data
+        //     }
+        //     .addDisposableTo(disposeBag)
+        
+        // TableView itemSelected action callback
+        // tableView
+        //     .rx
+        //     .itemSelected
+        //     .asObservable()
+        //     .subscribe(onNext: { [unowned self] (indexPath) in
+                
+        //     })
+        //     .addDisposableTo(disposeBag)
+    }
+
+    // MARK: - Actions
+
+    // MARK: - Private
+    
+}
+
+// MARK: - RainbowColorSource
+extension {{ module_info.name }}ViewController: RainbowColorSource {
+    func navigationBarInColor() -> UIColor {
+        return Colors.<#blue#>
+    }
+}
